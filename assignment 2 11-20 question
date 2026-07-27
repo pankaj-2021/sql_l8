@@ -1,0 +1,59 @@
+-- Q11
+SELECT State, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY State
+ORDER BY EmpCount DESC, State ASC;
+
+-- Q12
+SELECT Region, SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY Region
+ORDER BY TotalSalary DESC;
+
+-- Q13
+SELECT Dept, MIN(Salary) AS MinSalary
+FROM Employees
+GROUP BY Dept
+ORDER BY MinSalary DESC;
+
+-- Q14
+SELECT Dept, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Dept
+HAVING COUNT(*) > 10;
+
+-- Q15
+SELECT Dept, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Dept
+HAVING AVG(Salary) > 65000;
+
+-- Q16
+SELECT City, SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY City
+HAVING SUM(Salary) > 600000;
+
+-- Q17
+SELECT Role, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Role
+HAVING COUNT(*) > 7;
+
+-- Q18
+SELECT Region, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Region
+HAVING AVG(Salary) < 70000;
+
+-- Q19
+SELECT Dept, MAX(Salary) AS MaxSalary
+FROM Employees
+GROUP BY Dept
+HAVING MAX(Salary) >= 90000;
+
+-- Q20
+SELECT State, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY State
+HAVING COUNT(*) > 12;
