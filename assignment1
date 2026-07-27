@@ -1,0 +1,165 @@
+SELECT Dept, COUNT(*) AS TotalEmployees
+FROM Employees
+GROUP BY Dept;
+
+-- Q2
+SELECT Dept, SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY Dept;
+
+-- Q3
+SELECT City, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY City;
+
+-- Q4
+SELECT Dept, MAX(Salary) AS MaxSalary
+FROM Employees
+GROUP BY Dept;
+
+-- Q5
+SELECT Dept, MIN(Salary) AS MinSalary
+FROM Employees
+GROUP BY Dept;
+
+-- Q6
+SELECT Dept, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Dept
+ORDER BY EmpCount DESC;
+
+-- Q7
+SELECT City, SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY City
+ORDER BY TotalSalary ASC;
+
+-- Q8
+SELECT Name, Dept, Salary
+FROM Employees
+ORDER BY Dept ASC, Salary DESC;
+
+-- Q9
+SELECT Name, City, JoinDate
+FROM Employees
+ORDER BY City ASC, JoinDate ASC;
+
+-- Q10
+SELECT Name, Role, Salary
+FROM Employees
+ORDER BY Role ASC, Salary ASC;
+
+-- Q11
+SELECT Dept, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Dept
+HAVING COUNT(*) > 7;
+
+-- Q12
+SELECT Dept, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Dept
+HAVING AVG(Salary) > 65000;
+
+-- Q13
+SELECT City, SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY City
+HAVING SUM(Salary) > 650000;
+
+-- Q14
+SELECT Dept, MAX(Salary) AS MaxSalary
+FROM Employees
+GROUP BY Dept
+HAVING MAX(Salary) >= 80000;
+
+-- Q15
+SELECT Role, COUNT(*) AS RoleCount
+FROM Employees
+GROUP BY Role
+HAVING COUNT(*) >= 5;
+
+-- Q16
+SELECT AVG(Salary) AS CompanyAvgSalary
+FROM Employees;
+
+-- Q17
+SELECT Dept, COUNT(*) AS FemaleCount
+FROM Employees
+WHERE Gender = 'F'
+GROUP BY Dept;
+
+-- Q18
+SELECT MAX(Salary) AS Highest,
+       MIN(Salary) AS Lowest
+FROM Employees;
+
+-- Q19
+SELECT SUM(Salary) AS TotalSalary
+FROM Employees
+WHERE JoinDate > '2019-01-01';
+
+-- Q20
+SELECT Gender, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Gender;
+
+-- Q21
+SELECT Dept, City, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Dept, City;
+
+-- Q22
+SELECT Dept, Gender, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Dept, Gender;
+
+-- Q23
+SELECT City, Role, SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY City, Role
+ORDER BY City, TotalSalary DESC;
+
+-- Q24
+SELECT Dept, Role, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Dept, Role
+HAVING COUNT(*) > 1;
+
+-- Q25
+SELECT City, Gender, MAX(Salary) AS MaxSalary
+FROM Employees
+GROUP BY City, Gender;
+
+-- Q26
+SELECT Dept, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Dept
+HAVING AVG(Salary) > 60000
+ORDER BY AvgSalary DESC;
+
+-- Q27
+SELECT City, Dept, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY City, Dept
+HAVING COUNT(*) > 1
+ORDER BY EmpCount DESC, City;
+
+-- Q28
+SELECT Role, SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY Role
+HAVING SUM(Salary) > 300000
+ORDER BY TotalSalary ASC;
+
+-- Q29
+SELECT UPPER(Name) AS EmpName,
+       YEAR(JoinDate) AS JoinYear
+FROM Employees;
+
+-- Q30
+SELECT YEAR(JoinDate) AS JoinYear,
+       COUNT(*) AS Joiners
+FROM Employees
+GROUP BY YEAR(JoinDate)
+ORDER BY JoinYear;
