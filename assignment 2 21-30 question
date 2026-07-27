@@ -1,0 +1,54 @@
+-- Q21
+SELECT City, MIN(Salary) AS MinSalary
+FROM Employees
+GROUP BY City
+HAVING MIN(Salary) > 60000;
+
+-- Q22
+SELECT Dept, City, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Dept, City;
+
+-- Q23
+SELECT Dept, Gender, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Dept, Gender;
+
+-- Q24
+SELECT Region, Role, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Region, Role;
+
+-- Q25
+SELECT State, Dept, MAX(Salary) AS MaxSalary
+FROM Employees
+GROUP BY State, Dept;
+
+-- Q26
+SELECT City, Gender, SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY City, Gender;
+
+-- Q27
+SELECT Dept, City, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY Dept, City
+HAVING COUNT(*) > 2;
+
+-- Q28
+SELECT Region, Gender, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Region, Gender
+ORDER BY Region, AvgSalary DESC;
+
+-- Q29
+SELECT State, Role, COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY State, Role
+HAVING COUNT(*) > 1;
+
+-- Q30
+SELECT YEAR(JoinDate) AS JoinYear,
+       COUNT(*) AS Joiners
+FROM Employees
+GROUP BY YEAR(JoinDate);
