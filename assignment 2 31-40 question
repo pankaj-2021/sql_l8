@@ -1,0 +1,67 @@
+-- Q31
+SELECT YEAR(JoinDate) AS JoinYear,
+       AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY YEAR(JoinDate);
+
+-- Q32
+SELECT MONTH(JoinDate) AS JoinMonth,
+       COUNT(*) AS Joiners
+FROM Employees
+GROUP BY MONTH(JoinDate);
+
+-- Q33
+SELECT QUARTER(JoinDate) AS JoinQtr,
+       SUM(Salary) AS TotalSalary
+FROM Employees
+GROUP BY QUARTER(JoinDate);
+
+-- Q34
+SELECT QUARTER(JoinDate) AS Qtr,
+       COUNT(*) AS Joiners
+FROM Employees
+WHERE QUARTER(JoinDate) IN (1, 3)
+GROUP BY QUARTER(JoinDate);
+
+-- Q35
+SELECT YEAR(JoinDate) AS JoinYear,
+       Dept,
+       COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY YEAR(JoinDate), Dept
+ORDER BY JoinYear, Dept;
+
+-- Q36
+SELECT YEAR(JoinDate) AS JoinYear,
+       COUNT(*) AS Joiners
+FROM Employees
+GROUP BY YEAR(JoinDate)
+HAVING COUNT(*) > 6;
+
+-- Q37
+SELECT QUARTER(JoinDate) AS Qtr,
+       AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY QUARTER(JoinDate)
+HAVING AVG(Salary) > 70000;
+
+-- Q38
+SELECT State,
+       COUNT(*) AS EmpCount,
+       AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY State;
+
+-- Q39
+SELECT State,
+       Dept,
+       COUNT(*) AS EmpCount
+FROM Employees
+GROUP BY State, Dept;
+
+-- Q40
+SELECT City,
+       COUNT(DISTINCT Dept) AS DeptCount
+FROM Employees
+GROUP BY City
+HAVING COUNT(DISTINCT Dept) > 2;
