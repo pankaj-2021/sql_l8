@@ -1,28 +1,48 @@
 
-show databases;
-
 use world;
 
-describe country;
+show tables;
 
-select * from country;
+describe city;
 
-select name, continent from country;
+select * from city;
 
-select * from country
-where continent='Asia';
+select district , population , population+1999 from city;
 
-select * from country
-where name='india';
+select * from city where name = 'kabul';
 
-select * from country
-where continent='europe';
+select district, population, countrycode from city where countrycode= 'nld';
 
-select * from country where continent='europe'
-or indepyear>1900;
-
-select code, name from country where continent='africa' and region ='central africa';
-
-select name, continent, population from country where continent='asia' or continent='africa';
+ select name, district, population, countrycode from city where countrycode= 'ind' and population>2000000;
  
-select name, region, population, population+1.1 from country where indepyear>1950
+ select * from city where population>100000 and population<150000;
+ 
+ select * from city where population = 129170 or population = 117196;
+ 
+  select * from city where name like 'k%';
+  
+  select * from city where name like '%b';
+  
+   select * from city where name like 'k%a';
+   
+select * from city where name like '%a%';
+
+ select * from city where name like 'a__';
+ 
+  select * from city where name like 'k__%';
+  
+   select * from city where name like 'k%_';
+   
+    select * from city where name like '_a%_';
+    
+     select name, population from city where name like '%e%';
+     
+  select name, population from city where name like '%b_';
+  
+   select name, population from city where name like '_a%r_';
+   
+    select name, population from city where name like '%aa%';
+    
+select name, population from city where name like '_%e_e%_';
+    
+    
