@@ -48,6 +48,15 @@ select continent, count(name) from country group by continent;
 
 select continent, region,count(name) from country group by continent,region;
 
+use world;
+
+select continent, count(name) from country group by continent having count(name)>10;
+
+select continent, count(name) from country where continent like 'a%' group by continent;
+
+select continent, count(name) from country where continent like 'a%' group by continent having count(name)>10;
+
+ 
 
 
 
@@ -56,6 +65,9 @@ select continent, region,count(name) from country group by continent,region;
 
 
 
+
+
+ 
 
 
 
