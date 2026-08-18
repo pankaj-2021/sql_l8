@@ -18,6 +18,18 @@ select name, count(name) from country group by name;
 
 select * from city where district='zuid-holland';
 
+select continent from country group by continent;
+
+select continent , count(name) from country group by continent;
+
+select continent , count(name) from country group by continent having count(name)>30;
+
+select count(name) from country where indepyear='1991';
+
+select indepyear,count(name) from country group by indepyear;
+
+select indepyear,count(name) from country group by indepyear having count(name)>10;
+
 select name from city where district='zuid-holland';
 
 select count(name) from city where district='zuid-holland';
